@@ -1,0 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package bookstore;
+
+import entity.Client;
+import java.util.Scanner;
+
+/**
+ *
+ * @author kristiinaparri
+ */
+public class ClientCreator {
+    public Client returnNewClient(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("----------Добавление клиента----------");
+        
+        Client client = new Client();
+        
+        System.out.println("Имя");
+        client.setName(scanner.nextLine());
+        
+        System.out.println("Фамилия");
+        client.setSurname(scanner.nextLine());
+        
+        System.out.println("Телефон");
+        client.setPhone(scanner.nextLine());
+        
+        System.out.println("Город");
+        client.setCity(scanner.nextLine());
+        
+        
+        return client;
+        
+    }
+}
