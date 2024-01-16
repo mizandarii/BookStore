@@ -1,0 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+package bookstore;
+
+import entity.Book;
+import entity.Client;
+import entity.OrderHistory;
+import java.util.List;
+
+/**
+ *
+ * @author kristiinaparri
+ */
+public interface Manageable {
+    public Book createBook();
+    public Client createClient();
+    public OrderHistory issueOrder(List<Book> books, List<Client> clients);
+    
+}
