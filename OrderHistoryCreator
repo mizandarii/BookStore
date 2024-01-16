@@ -1,0 +1,48 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package bookstore;
+
+import java.util.Scanner;
+import entity.Book;
+import entity.Client;
+import entity.OrderHistory;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.List;
+
+
+/**
+ *
+ * @author kristiinaparri
+ */
+public class OrderHistoryCreator {
+    public OrderHistory returnNewOrderHistory(List<Book> books, List<Client> clients){
+        System.out.println("----------Продажа книги клиенту----------");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Список книг: ");
+        int countBooks = books.size();
+        for (int i = 0; i<countBooks; i++){
+            System.out.println(i + 1 + ". " + books.get(i).getBookName());
+        }
+        
+        System.out.println("список клиентов");
+        int countClients = clients.size();
+        for (int i = 0; i<countClients; i++){
+            System.out.println(i + 1 + ". "+ clients.get(i).getName() + " " + clients.get(i).getName());
+        }
+        
+        System.out.println("Выберите номер книги: ");
+        int numberBook = scanner.nextInt();
+        Book book = books.get(numberBook - 1);
+        
+        System.out.println("выберите номер клиента: ");
+        int numberClient = scanner.nextInt();
+        Client client = clients.get(numberClient - 1);
+        Calendar c = new GregorianCalendar();
+        OrderHistory orderHistory = new OrderHistory(null, book, client, c.getTime());
+        
+        return orderHistory;
+    }
+}
